@@ -1,9 +1,14 @@
 package com.example.german.iotgarden;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.content.Intent;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -12,18 +17,41 @@ import java.util.TimerTask;
  * Created by German on 08/10/2016.
  */
 public class SplashScreenActivity extends Activity {
-    private static final long SPLASH_SCREEN_DELAY = 3000;
+    private static final long SPLASH_SCREEN_DELAY = 6000;
+    private ImageView image;
+    private TextView tittleApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         // Set portrait orientation
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // Hide title bar
+
+        /*
+        TextView tx = (TextView)findViewById(R.id.textview1);
+
+   Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/abc.ttf");
+
+   tx.setTypeface(custom_font);
+         */
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.splash_screen);
+
+        image = (ImageView) findViewById(R.id.inicialImage);
+        Animation animationImage = AnimationUtils.loadAnimation(SplashScreenActivity.this, R.anim.move_from_rigth_to_left);
+        image.startAnimation(animationImage);
+
+
+        tittleApp = (TextView) findViewById(R.id.appName);
+        tittleApp.setText("IoTGarden");
+        Typeface face = Typeface.createFromAsset(getAssets(), "Fonts/MixBrush.ttf");
+        tittleApp.setTypeface(face);
+        Animation animationTittle = AnimationUtils.loadAnimation(SplashScreenActivity.this, R.anim.move_from_left_to_rigth);
+        tittleApp.startAnimation(animationTittle);
 
         TimerTask task = new TimerTask() {
             @Override
