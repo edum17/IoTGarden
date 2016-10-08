@@ -1,0 +1,52 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.german.iotgarden.LogIn"
+    android:id="@+id/id_logIn">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Red"
+        android:textSize="20dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center|left"
+        android:textStyle="bold"
+        android:id="@+id/errorMessage"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="180dp"
+        android:hint="Email"
+        android:id="@+id/userID"
+        />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:gravity="left"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="250dp"
+        android:hint="*************"
+        android:inputType="textPassword"
+        android:id="@+id/passwordID"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:textColor="@color/White"
+        android:textSize="20dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="340dp"
+        android:id="@+id/logInButton"
+        android:textAllCaps="false"
+        android:background="@drawable/button_style"/>
+
+</FrameLayout>

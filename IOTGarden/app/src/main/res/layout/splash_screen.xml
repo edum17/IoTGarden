@@ -18,7 +18,7 @@
         android:layout_gravity="center"
         android:id="@+id/appName"
         android:text="IoTGarden"
-        android:textColor="@color/Verde"
+        android:textColor="@color/Green"
         android:textSize="70dp"
         android:textStyle="bold"
         />

@@ -1,8 +1,12 @@
 package com.example.german.iotgarden;
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.content.Intent;
 import android.view.animation.Animation;
@@ -16,7 +20,7 @@ import java.util.TimerTask;
 /**
  * Created by German on 08/10/2016.
  */
-public class SplashScreenActivity extends Activity {
+public class SplashScreenActivity extends FragmentActivity {
     private static final long SPLASH_SCREEN_DELAY = 6000;
     private ImageView image;
     private TextView tittleApp;
@@ -30,13 +34,7 @@ public class SplashScreenActivity extends Activity {
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // Hide title bar
 
-        /*
-        TextView tx = (TextView)findViewById(R.id.textview1);
 
-   Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/abc.ttf");
-
-   tx.setTypeface(custom_font);
-         */
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.splash_screen);

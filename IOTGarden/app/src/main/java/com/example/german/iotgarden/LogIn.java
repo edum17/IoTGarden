@@ -1,29 +1,60 @@
 package com.example.german.iotgarden;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 
-public class LogIn extends AppCompatActivity {
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.os.Bundle;
+import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
+import android.content.Context;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+
+public class LogIn extends FragmentActivity {
+
+    private Context context;
+    private EditText userID;
+    private EditText passwordID;
+    private Button logInButton;
+    private TextView errorMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.fragment_log_in);
+        context = this;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        userID = (EditText) findViewById(R.id.userID);
+        passwordID = (EditText) findViewById(R.id.passwordID);
+        logInButton = (Button) findViewById(R.id.logInButton);
+        errorMessage = (TextView) findViewById(R.id.errorMessage);
+        logInButton.setFocusable(false);
+        logInButton.setEnabled(false);
+
+
+        if (userID.getText().toString() != null && passwordID.getText().toString() != null) {
+            logInButton.setFocusable(true);
+            logInButton.setEnabled(true);
+        }
+
+        logInButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                System.out.println("--------------------------------------------------");
+                System.out.println("userID.getText().toString(): " + userID.getText().toString());
+                System.out.println("userID.getText().toString(): " + userID.getText().toString());
+                System.out.println("--------------------------------------------------");
+                if (userID.getText().toString().equals("a") && userID.getText().toString().equals("a")) {
+                    Intent logInIntent = new Intent(context, MainActivity.class);
+                    startActivity(logInIntent);
+                }
             }
         });
     }
+
 
 }
